@@ -5,8 +5,8 @@ const int ROW_COUNT = 8;
 const int COL_COUNT = 8;
 const int POSSIBLE_MOVES = 8;
 
-int row_delta[POSSIBLE_MOVES] = {2, 1, -1, -2, -2, -1, 1, 2};
-int col_delta[POSSIBLE_MOVES] = {-1, -2, -2, -1, 1, 2, 2, 1};
+int ROW[POSSIBLE_MOVES] = {2, 1, -1, -2, -2, -1, 1, 2};
+int COLUMN[POSSIBLE_MOVES] = {-1, -2, -2, -1, 1, 2, 2, 1};
 
 int board[ROW_COUNT][COL_COUNT];
 
@@ -30,8 +30,8 @@ find_tour(int move_no, int current_row, int current_col) {
     }
 
     for (int move = 0; move < POSSIBLE_MOVES; move++) {
-        int new_row = current_row + row_delta[move];
-        int new_col = current_col + col_delta[move];
+        int new_row = current_row + ROW[move];
+        int new_col = current_col + COLUMN[move];
 
         if (new_row < 0 || new_row >= ROW_COUNT || new_col < 0 || new_col >= COL_COUNT)
             continue;
